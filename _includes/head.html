@@ -1,0 +1,49 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" media="screen, tv" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" media="handheld" href="{{ "/css/mobile.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" media="screen and (max-width: 840px)" href="{{ "/css/mobile.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="shortcut icon" href="{{ "/favicon.png" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Raleway:400,300,600|Lato:400,300' rel='stylesheet' type='text/css'>
+  <script src="//j.wovn.io/1" data-wovnio="key=zH9iK" async></script>
+
+  {% if page and page.fb_meta_title %}
+    <meta property="og:title" content="{{ page.fb_meta_title }}" />
+  {% else %}
+    <meta property="og:title" content="Junction Asia Hackathon ￨ May  6th-8th" />
+  {% endif %}
+
+  {% if page and page.fb_meta_description %}
+    <meta property="og:description" content="{{ page.fb_meta_description }}" />
+  {% else %}
+    <meta property="og:description" content="Hackathons are all about taking something you love, combining it with tech and learning something in the process.
+                Junction Asia brings together hackers, designers, the best partners and hardware for one weekend of hacking.
+                Charge your laptops and bring your friends for an amazing event. Let's hack!</p>" />
+  {% endif %}
+
+  {% if page and page.fb_meta_image %}
+    <meta property="og:image" content="{{ page.fb_meta_image | prepend: site.baseurl | prepend:site.url }}" />
+  {% else %}
+  <meta property="og:image" content="{{ "/images/production/opengraph.jpg" | prepend: site.baseurl | prepend:site.url }}" />
+
+  {% endif %}
+
+  <meta property="og:site_name" content="Junction Asia" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://junctionasia.github.io" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+</head>
